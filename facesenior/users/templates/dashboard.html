@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block content %}
+	<h1> wolcom, {{user.username}} </h1>
+	
+	<h1> -------------------- </h1>
+	
+	  <a href="{% url 'getpost_url' %}" >home &nbsp &nbsp &nbsp &nbsp </a>
+  <a href="{% url 'getmypost_url' %}">my profile &nbsp &nbsp &nbsp &nbsp </a>
+  <a href="{% url 'get_myfriends_url' %}">my friends &nbsp &nbsp &nbsp &nbsp </a>
+   <a href="{% url 'addfriend_url' %}">add anew frind</a>
+	
+		<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+	
+	
+	<a href="{% url 'logout' %}">logout</a>
+	
+
+	
+	
+{% endblock %}

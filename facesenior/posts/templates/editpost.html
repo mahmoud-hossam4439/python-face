@@ -1,0 +1,14 @@
+<html>
+  <head> ... </head>
+  <body>
+    <a href="{% url 'getpost_url' %}">home</a>
+   
+   
+<form method="POST" action="/posts/{{ pp }}/edit"> {% csrf_token %}
+       {{ form.as_p }}
+    <input type="submit">
+</form>
+  </body>
+</html>
+
+

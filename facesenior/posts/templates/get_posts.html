@@ -1,0 +1,41 @@
+ <html>
+  <head> home ..................... hi {{user.username}} </head>
+  <body>
+  <br/>
+  <br/>
+  
+  <a href="{% url 'getpost_url' %}" >home &nbsp &nbsp &nbsp &nbsp </a>
+  <a href="{% url 'getmypost_url' %}">my profile &nbsp &nbsp &nbsp &nbsp </a>
+  <a href="{% url 'get_myfriends_url' %}">my friends &nbsp &nbsp &nbsp &nbsp </a>
+   <a href="{% url 'addfriend_url' %}">add anew frind</a>
+  
+   <br/>
+   <br/>
+   
+    
+
+   
+   
+   <a href="{% url 'addpost_url' %}">add a new post</a>
+   <br/>
+   <br/>
+   
+  <ul>
+    {% for m in data %}
+    <li> {{ m.user_id__username}} <br/> {{ m.post_desc}} <br/>   &nbsp &nbsp &nbsp &nbsp <button onclick="window.location.href = '/posts/{{ m.post_id }}/delete';">delete </button> &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp <a href="/posts/{{ m.post_id }}/edit">edit  </a> &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp <a href="/posts/{{ m.post_id }}/comment">comment  </a> <br/> <br/> <br/> <br/> <br/> <br/>  </li>
+    {% empty %}
+    <li> No
+    posts in the
+    List </li>
+    {% endfor %}
+    </ul>
+	
+	<br/>
+   <br/>
+   <br/>
+   <br/>
+	
+	<a href="{% url 'logout' %}">logout</a>
+	
+   </body>
+</html>

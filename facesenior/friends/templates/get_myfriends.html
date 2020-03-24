@@ -1,0 +1,27 @@
+ <html>
+  <head> my friends   ..... </head>
+  <body>
+  <br/>
+  <br/>
+  
+  <a href="{% url 'getpost_url' %}" >home &nbsp &nbsp &nbsp &nbsp </a>
+  <a href="{% url 'getmypost_url' %}">my profile &nbsp &nbsp &nbsp &nbsp </a>
+  <a href="{% url 'get_myfriends_url' %}">my friends &nbsp &nbsp &nbsp &nbsp </a>
+   <a href="{% url 'addfriend_url' %}">add anew frind</a>
+  
+   
+   <br/>
+   <br/>
+   
+  <ul>
+    {% for m in data %}
+    <li> {{ m.values }} </li>
+    {% empty %}
+    <li> No
+    posts in the
+    List </li>
+    {% endfor %}
+    </ul>
+	
+   </body>
+</html>
